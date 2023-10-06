@@ -10,7 +10,8 @@
 @layer base {
   html {
     font-family: Helvetica, Arial, sans-serif;
-    color: #44403c;
+    color:##44403c;
+    /* color: #d6d3d1; */
   }
 }
 
