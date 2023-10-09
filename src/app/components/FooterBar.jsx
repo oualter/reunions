@@ -2,7 +2,7 @@ import FooterLink from './FooterLink'
 export default function FooterBar () {
   return (
     <footer className="border-t py-3 ">
-      <nav className="bg-orange-600 flex justify-center">
+      <nav className="flex justify-center">
         <ul className="flex gap-2">
           <li className="mx-10">
             &copy;

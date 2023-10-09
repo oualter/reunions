@@ -2,8 +2,8 @@ import NavLink from './NavLink'
 
 export default function NavBar() {
   return (
-    <nav className="bg-orange-600">
-      <button className="bg-orange-100 border-solid border-2 border-indigo-600">
+    <nav className="">
+      <button className="">
         Open / Close
       </button>
       <ul className="flex gap-2">

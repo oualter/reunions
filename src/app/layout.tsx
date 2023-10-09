@@ -1,6 +1,6 @@
 import './globals.css'
-import NavBar from '../../components/NavBar'
-import FooterBar from '../../components/FooterBar'
+import NavBar from './components/NavBar'
+import FooterBar from './components/FooterBar'
 
 export const metadata = {
   title: {
