@@ -14,6 +14,12 @@
   }
 }
 
+.radial-bg{
+  /* background: radial-gradient(#fff, #F4DF00 ) */
+  background: radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(244,223,0,0.16) 81%, rgba(255,252,0,0.16) 100%);
+  /* couleur des feuilles de ginkgo biloba en automne */
+}
+
 :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;

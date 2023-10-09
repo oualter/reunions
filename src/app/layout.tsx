@@ -18,7 +18,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="fr">
-      <body className="container mx-auto min-h-screen flex flex-col px-4 pt-10 pb-2">
+      <body className="container mx-auto min-h-screen flex flex-col px-4 pt-10 pb-2 radial-bg">
         <header>
           <div className="logo brand-name text-center text-5xl font-archisticonormal">
             Places de la Réunion
