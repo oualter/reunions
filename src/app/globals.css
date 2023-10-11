@@ -3,24 +3,112 @@
 @tailwind utilities;
 
 @font-face {
-    font-family: 'archisticonormal';
-    src: url('/fonts/Archistico_Simple-webfont.woff') format('woff');
+  font-family: 'archisticonormal';
+  src: url('/fonts/Archistico_Simple-webfont.woff') format('woff');
 }
 
 @layer base {
   html {
     font-family: Helvetica, Arial, sans-serif;
-    color:##44403c;
+    color: #44403c;
     /* color: #d6d3d1; */
   }
 }
 
-.radial-bg{
+.radial-bg {
   /* background: radial-gradient(#fff, #F4DF00 ) */
   /* background: radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(244,223,0,0.16) 81%, rgba(255,252,0,0.16) 100%); */
-  background: radial-gradient(circle, rgba(136,166,28,0.2) 0%, rgba(242,185,15,0.5) 88%, rgba(242,140,15,0.3) 100%);
+  background: radial-gradient(
+    circle,
+    rgba(136, 166, 28, 0.2) 0%,
+    rgba(242, 185, 15, 0.2) 88%,
+    rgba(242, 140, 15, 0.2) 100%
+  );
   /* couleur des feuilles de ginkgo biloba en automne */
   /* https://color.adobe.com/fr/trends/Flavour?page=3 */
+}
+header {
+  position: relative;
+}
+header aside {
+  position: absolute;
+  top: 0;
+  left: 0;  
+  height: 100vh;
+  padding: 2.5rem;
+  z-index: 2;
+  transition: background 0.3s ease;
+}
+aside.open{
+background-color: rgba(238,238,238,0.8);
+}
+nav{
+  font-family: "Courier New", monospace;
+  font-size: 1.1rem;
+  white-space: nowrap;
+}
+header nav {
+  width: 0;
+  overflow: hidden;
+  transition: all 0.3s ease;  
+
+}
+header nav.open {
+  max-width: 500px;
+  width: 450px;
+  overflow: hidden;
+}
+
+.nav-toggle {
+  margin-bottom: 1.5rem;
+}
+.nav-toggle:focus {
+  outline-width: 0;
+}
+
+.nav-toggle [class*='bar-'] {
+  background: #000;
+  display: block;
+  transform: rotate(0deg);
+  transition: 0.2s ease all;
+  border-radius: 2px;
+  height: 2px;
+  width: 25px;
+  margin-bottom: 4px;
+}
+
+.nav-toggle .bar-bot {
+  margin-bottom: 0;
+}
+
+.open .bar-top {
+  transform: rotate(45deg);
+  transform-origin: 15% 15%;
+}
+.open .bar-mid {
+  opacity: 0;
+}
+.open .bar-bot {
+  transform: rotate(-45deg);
+  transform-origin: 15% 95%;
+}
+
+header nav ul {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+nav#chapters{
+  margin-top: 3rem;
+}
+
+header nav#chapters p{
+  margin-bottom: 1.5rem;
+}
+
+.hx_level2{
+  font-size: 2rem;
+  font-weight: bold;
 }
 
 :root {
@@ -36,5 +124,3 @@
     --background-end-rgb: 0, 0, 0;
   }
 }
-
-

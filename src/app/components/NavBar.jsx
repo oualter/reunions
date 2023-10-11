@@ -1,58 +1,102 @@
-<<<<<<< HEAD
-import NavLink from './NavLink'
-
-export default function NavBar() {
-  return (
-    <nav className="">
-
-      <ul className="flex justify-center gap-2">
-=======
 "use client";
 import { useState } from 'react';
 import NavLink from './NavLink'
 
 export default function NavBar() {
 
-const [menuOpen, setMenuOpen] = useState('');
+const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <>
-    <button id="hamburger-button" className="relative h-8 w-8 cursor-pointer text-3xl" onClick={()=>{setMenuOpen(!menuOpen)}}>
-          <div
-            className="absolute top-4 -mt-0.5 h-1 w-8 rounded bg-white transition-all duration-500 before:absolute before:h-1 before:w-8 before:-translate-x-4 before:-translate-y-3 before:rounded before:bg-white before:transition-all before:duration-500 before:content-[''] after:absolute after:h-1 after:w-8 after:-translate-x-4 after:translate-y-3 after:rounded after:bg-white after:transition-all after:duration-500 after:content-['']">
-          </div>
-        </button>
+    <aside className={menuOpen ? 'open' : ''}>
+      <button
+        className={menuOpen ? 'nav-toggle open' : 'nav-toggle'}
+        onClick={() => {
+          setMenuOpen(!menuOpen)
+          console.log('open ??? ', menuOpen)
+        }}
+      >
+        <span class="bar-top"></span>
+        <span class="bar-mid"></span>
+        <span class="bar-bot"></span>
+      </button>
 
-    <nav className={menuOpen ? "open" : ""} aria-label="main">
-      <ul className="flex gap-2">
->>>>>>> 0775cd077a135a2c24275101b6df6843a5e8757f
-        <li className="px-10">
-          <NavLink href="/">Accueil</NavLink>
-        </li>
-        <li className="px-10">
-          <NavLink href="/a-propos">A propos</NavLink>
-        </li>
-        <li className="px-10">
-          <NavLink href="/contact">Contact</NavLink>
-        </li>
-      </ul>
-    </nav>
-<<<<<<< HEAD
-=======
-
-<section id="mobile-menu"
-      className="top-68 justify-center absolute w-full origin-top animate-open-menu flex-col bg-black text-5xl">
-      <nav className="flex min-h-screen flex-col items-center py-8" aria-label="mobile">
-        <a href="#hero" className="w-full py-6 text-center hover:opacity-90">Home</a>
-        <a href="#rockets" className="w-full py-6 text-center hover:opacity-90">Our Rockets</a>
-        <a href="#testimonials" className="w-full py-6 text-center hover:opacity-90">Testimonials</a>
-        <a href="#contact" className="w-full py-6 text-center hover:opacity-90">Contact Us</a>
-        <a href="#footer" className="w-full py-6 text-center hover:opacity-90">Legal</a>
+      <nav
+        id="main-navigation"
+        className={menuOpen ? 'open' : ''}
+        aria-label="main"
+      >
+        <ul>
+          <li>
+            <NavLink href="/">Accueil</NavLink>
+          </li>
+          <li>
+            <NavLink href="/le-livre">Le livre (PDF)</NavLink>
+          </li>
+          <li>
+            <NavLink href="/a-propos">&Agrave; propos</NavLink>
+          </li>
+          <li>
+            <NavLink href="/contact">Contact</NavLink>
+          </li>
+        </ul>
       </nav>
-    </section>
-
-
-    </>
->>>>>>> 0775cd077a135a2c24275101b6df6843a5e8757f
+      <nav id="chapters" className={menuOpen ? 'open' : ''}>
+        <p className="hx_level2">Chapitres</p>
+        <ul>
+          <li>
+            <NavLink href="/janvier/">
+              1er janvier, Place de la Réunion, 00h01
+            </NavLink>
+          </li>
+          <li>
+            <NavLink href="/fevrier/">
+              5 février, Place de la Réunion, 15h04
+            </NavLink>
+          </li>
+          <li>
+            <NavLink href="/mars/">22 mars, Place de la Réunion, 06h23</NavLink>
+          </li>
+          <li>
+            <NavLink href="/avril/">
+              17 avril, Place de la Réunion, 16h40
+            </NavLink>
+          </li>
+          <li>
+            <NavLink href="/mai/">30 mai, Place de la Réunion, 12h47</NavLink>
+          </li>
+          <li>
+            <NavLink href="/juin/">19 juin, Place de la Réunion, 18h32</NavLink>
+          </li>
+          <li>
+            <NavLink href="/juillet/">
+              15 juillet, Place de la Réunion, 14h46
+            </NavLink>
+          </li>
+          <li>
+            <NavLink href="/aout/">4 août, Place de la Réunion, 23h12</NavLink>
+          </li>
+          <li>
+            <NavLink href="/septembre/">
+              3 septembre, Place de la Réunion, 08h23
+            </NavLink>
+          </li>
+          <li>
+            <NavLink href="/octobre/">
+              8 octobre, Place de la Réunion, 17h18
+            </NavLink>
+          </li>
+          <li>
+            <NavLink href="/novembre/">
+              27 novembre, Place de la Réunion, 11h37
+            </NavLink>
+          </li>
+          <li>
+            <NavLink href="/decembre/">
+              19 décembre, Place de la Réunion, 03h23
+            </NavLink>
+          </li>
+        </ul>
+      </nav>
+    </aside>
   )
 }

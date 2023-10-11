@@ -11,7 +11,7 @@ export default function FooterBar () {
             </FooterLink>
           </li>
           <li className="mx-10">
-            <FooterLink href="/a-propos/">A propos</FooterLink>
+            <FooterLink href="/a-propos/">&Agrave; propos</FooterLink>
           </li>
           <li className="mx-10">
             <FooterLink href="/contact/">Contact</FooterLink>
