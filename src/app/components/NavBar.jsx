@@ -1,28 +1,33 @@
-"use client";
-import { useState } from 'react';
+// "use client";
+// import { useState } from 'react'
 import NavLink from './NavLink'
+// import { getChapitres } from '@/lib/chapitres'
+// import { GetChapitres } from './GetChapitres'
+// import { getReunionsPosts } from './GetChapitres'
 
-export default function NavBar() {
-
-const [menuOpen, setMenuOpen] = useState(false);
-
+export default async function NavBar() {
+  // const dataChapitres = await getData();
+  // console.log('dataChapitres => ',dataChapitres)
   return (
-    <aside className={menuOpen ? 'open' : ''}>
+    <aside className="open">
+      {/* <GetChapitres /> */}
+      {/* <aside className={menuOpen ? 'open' : ''}> */}
       <button
-        className={menuOpen ? 'nav-toggle open' : 'nav-toggle'}
-        onClick={() => {
-          setMenuOpen(!menuOpen)
-          console.log('open ??? ', menuOpen)
-        }}
+        className="nav-toggle open"
+        // className={menuOpen ? 'nav-toggle open' : 'nav-toggle'}
+        // onClick={() => {
+        //   setMenuOpen(!menuOpen)
+        // }}
       >
-        <span class="bar-top"></span>
-        <span class="bar-mid"></span>
-        <span class="bar-bot"></span>
+        <span className="bar-top"></span>
+        <span className="bar-mid"></span>
+        <span className="bar-bot"></span>
       </button>
 
       <nav
         id="main-navigation"
-        className={menuOpen ? 'open' : ''}
+        className="open"
+        // className={menuOpen ? 'open' : ''}
         aria-label="main"
       >
         <ul>
@@ -40,9 +45,14 @@ const [menuOpen, setMenuOpen] = useState(false);
           </li>
         </ul>
       </nav>
-      <nav id="chapters" className={menuOpen ? 'open' : ''}>
+      <nav id="chapters" className="open">
+        {/* <nav id="chapters" className={menuOpen ? 'open' : ''}> */}
         <p className="hx_level2">Chapitres</p>
         <ul>
+          {/* {data.map((chapitre) => (
+            <div>chapitre.attributes.mois</div>
+          ))} */}
+          {/*
           <li>
             <NavLink href="/janvier/">
               1er janvier, Place de la Réunion, 00h01
@@ -95,6 +105,7 @@ const [menuOpen, setMenuOpen] = useState(false);
               19 décembre, Place de la Réunion, 03h23
             </NavLink>
           </li>
+        */}
         </ul>
       </nav>
     </aside>
