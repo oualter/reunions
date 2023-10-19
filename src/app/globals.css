@@ -11,6 +11,7 @@
   html {
     font-family: Helvetica, Arial, sans-serif;
     color: #44403c;
+    font-size:0.9rem
     /* color: #d6d3d1; */
   }
 }
@@ -44,7 +45,7 @@ background-color: rgba(238,238,238,0.8);
 }
 nav{
   font-family: "Courier New", monospace;
-  font-size: 1.1rem;
+  font-size: 0.8rem;
   white-space: nowrap;
 }
 header nav {
@@ -54,8 +55,8 @@ header nav {
 
 }
 header nav.open {
-  max-width: 500px;
-  width: 450px;
+  /* max-width: 500px; */
+  width: 350px;
   overflow: hidden;
 }
 
@@ -96,7 +97,7 @@ header nav.open {
 header nav ul {
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  /* gap: 1rem; */
 }
 nav#chapters{
   margin-top: 3rem;
@@ -107,8 +108,12 @@ header nav#chapters p{
 }
 
 .hx_level2{
-  font-size: 2rem;
+  font-size: 1.5rem;
   font-weight: bold;
+}
+
+.coordXY{
+  text-indent:-10000px
 }
 
 :root {

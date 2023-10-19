@@ -19,8 +19,8 @@ export default async function GetChapitres() {
   }
   const goodData = await dataChapitres();
   return <div>
-    {goodData.map((textencours)=>{
-      console.log(textencours.attributes.Mois)
-    })}
+    {/* {goodData.map((textencours)=>{
+      console.log(textencours.attributes)
+    })} */}
   </div>
 }
