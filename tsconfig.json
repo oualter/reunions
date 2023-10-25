@@ -23,6 +23,6 @@
       "@/*": ["./src/*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "src/app/components/ModalHandler.jsx", "src/app/components/ModalHandler.tsx.backup", "src/app/[slug]/page.jsx", "src/app/[slug]/page.tsx.backup", "src/app/[slug]/page-revamp.backup", "src/app/[slug]/page.tsx.bachup"],
   "exclude": ["node_modules"]
 }
