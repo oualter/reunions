@@ -4,7 +4,7 @@ export function sendEmail(data: FormData) {
 
   console.log(data)
 
-  const apiEndpoint = `http://localhost:3000/src/app/api/email/`
+  const apiEndpoint = `api/email/`
 
   fetch(apiEndpoint, {
     method: 'POST',
