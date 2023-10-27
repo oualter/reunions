@@ -7,7 +7,7 @@ export default function FooterBar () {
           <li className="mx-10">
             &copy;
             <FooterLink href="https://www.1651ouest.fr/">
-              16-51 Ouest
+              16.51 Ouest
             </FooterLink>
           </li>
           <li className="mx-10">

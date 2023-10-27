@@ -9,7 +9,8 @@ const config: Config = {
   theme: {
     extend: {
       fontFamily: {
-        archisticonormal: ['archisticonormal', 'cursive'],
+        'archisticonormal': ['archisticonormal', 'cursive'],
+        'typewriter': ['Courier','Courier New', 'Didot', 'Serif'],
       },
     },
   },

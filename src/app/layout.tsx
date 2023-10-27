@@ -30,7 +30,9 @@ export default function RootLayout({
           <NavBar />
         </header>
 
-        <main className="grow">{children}</main>
+        <main className="grow">
+          {children}
+        </main>
         <FooterBar />
       </body>
     </html>

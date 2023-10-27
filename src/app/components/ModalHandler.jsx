@@ -58,20 +58,20 @@ export default function ModalHandler(props) {
                 leaveFrom="opacity-100 scale-100"
                 leaveTo="opacity-0 scale-95"
               >
-                <Dialog.Panel className="w-full max-w-md transform overflow-hidden rounded-2xl bg-white p-6 text-left align-middle shadow-xl transition-all">
+                <Dialog.Panel className="w-full max-w-md font-typewriter transform overflow-hidden rounded-2xl bg-white p-6 text-left align-middle shadow-xl transition-all">
                   <Dialog.Title
                     as="h3"
-                    className="text-lg font-medium leading-6 text-gray-900"
+                    className="text-2xl font-medium leading-6 text-gray-900"
                   >
-                   {day} {month} {year} - {time}
+                    {day} {month} {year} - {time}
                   </Dialog.Title>
-                  <div className="mt-2">
+                  <div className="mt-2 text-lg">
                     {/* <p className="text-sm text-gray-500">
                       Your payment has been successfully submitted. We’ve sent
                       you an email with all of the details of your order.
                     </p> */}
-                    {contentFormatted.map((para) =>{
-                        return <p key={coordX}>{para.text}</p>
+                    {contentFormatted.map((para) => {
+                      return <p key={coordX}>{para.text}</p>
                     })}
                   </div>
 

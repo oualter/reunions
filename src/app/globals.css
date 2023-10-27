@@ -44,7 +44,7 @@ aside.open{
 background-color: rgba(238,238,238,0.8);
 }
 nav{
-  font-family: "Courier New", monospace;
+  font-family: typewriter;
   font-size: 0.8rem;
   white-space: nowrap;
 }
@@ -114,6 +114,13 @@ header nav#chapters p{
 
 .coordXY{
   text-indent:-10000px
+}
+form > div {
+  @apply flex flex-col gap-2;
+}
+input,
+textarea {
+  @apply shadow-md px-6 py-2 border border-slate-300;
 }
 
 :root {

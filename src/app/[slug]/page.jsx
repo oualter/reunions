@@ -14,7 +14,7 @@ const fetchFictions = async () => {
     // next:{
     //   revalidate:60
     // },
-    cache: 'no-store'
+    // cache: 'no-store'
   })
   return fictions.json()
 }
