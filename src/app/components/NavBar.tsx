@@ -1,31 +1,18 @@
-"use client";
+'use client'
 import { useState } from 'react'
 import Link from 'next/link'
 import NavLink from './NavLink'
 import { chapitres } from '../data'
 
-// import { getChapitres } from '@/lib/chapitres'
-// import { GetChapitres } from './GetChapitres'
-// import { getReunionsPosts } from './GetChapitres'
+export default function NavBar() {
+  const [isOpen, setOpen] = useState(false)
+  const toggleClass = () => {
+    setOpen(!isOpen)
+  }
 
-export default async function NavBar() {
-  // const [menuOpen, setMenuOpen] = useState(false)
-  // const dataChapitres = await getData();
-  // console.log('dataChapitres => ',dataChapitres)
   return (
-
-      // <aside className="open">
-      <aside 
-      className="open"
-      // className={menuOpen ? 'open' : ''}
-      >
-      <button
-        className="nav-toggle open"
-        // className={menuOpen ? 'nav-toggle open' : 'nav-toggle'}
-        // onClick={() => {
-        //   setMenuOpen(!menuOpen)
-        // }}
-      >
+    <aside className={isOpen ? 'open' : 'close'}>
+      <button className="nav-toggle" onClick={toggleClass}>
         <span className="bar-top"></span>
         <span className="bar-mid"></span>
         <span className="bar-bot"></span>
@@ -33,8 +20,7 @@ export default async function NavBar() {
 
       <nav
         id="main-navigation"
-        className="open"
-        // className={menuOpen ? 'open' : ''}
+        className={isOpen ? 'open' : 'close'}
         aria-label="main"
       >
         <ul>
@@ -52,13 +38,16 @@ export default async function NavBar() {
           </li>
         </ul>
       </nav>
-      <nav id="chapters" className="open">
+      <nav id="chapters" className={isOpen ? 'open' : 'close'}>
         {/* <nav id="chapters" className={menuOpen ? 'open' : ''}> */}
-        <p className="hx_level2">Chapitres</p>
-        <ul>
+        <p className="text-5xl font-archisticonormal">Chapitres</p>
+        <ul className="leading-10">
           {chapitres.map((chapitre) => (
             <li key={chapitre.id}>
-              <Link href={chapitre.month+`/`}>
+              <Link
+                className="font-archisticonormal text-xl hover:font-bold"
+                href={chapitre.month + `/`}
+              >
                 {chapitre.title}
               </Link>
             </li>

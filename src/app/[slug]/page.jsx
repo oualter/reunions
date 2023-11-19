@@ -33,7 +33,8 @@ export default async function monthFictions(params ) {
   })
     // console.log('getSlugChapters => ', getSlugChapters)
   return (
-    <section className="relative w-[864px] mx-auto">
+    // <section className="relative w-[864px] mx-auto">
+    <section className="relative w-[1050px] mx-auto">
       <ImagePlaceHolder />
       {getSlugChapters.map((elt) => {
         const {
@@ -44,8 +45,10 @@ export default async function monthFictions(params ) {
           createdAt,
           Heure,
         } = elt
-        const randX = Math.round(Math.random() * 864)
-        const randY = Math.round(Math.random() * 645)
+        // const randX = Math.round(Math.random() * 864)
+        // const randY = Math.round(Math.random() * 645)
+        const randX = Math.round(Math.random() * 629) + 117
+        const randY = Math.round(Math.random() * 470) + 87
         // console.log(Jour_du_mois)
         return (
           // <div
@@ -57,7 +60,7 @@ export default async function monthFictions(params ) {
           // </div>
           <ModalHandler
             key={createdAt}
-            classNameValue="coordXY absolute h-4 w-4 bg-green-500 cursor-pointer"
+            classNameValue="coordXY absolute h-8 w-8  cursor-pointer rounded-full"
             coordX={randX}
             coordY={randY}
             year={Annee}

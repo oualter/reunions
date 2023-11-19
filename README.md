@@ -34,3 +34,19 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+
+
+############################################
+
+##### CUSTOM PARTS #########################
+
+############################################
+
+** Ressources pour le formulaire de contact : **
+
+- https://medium.com/@abilsavio/email-contact-form-using-nextjs-app-router-60c29fe70644
+- https://www.youtube.com/watch?v=R_Pj593TH_Q (Hamed Bahram : Using React Hook Form, Zod Validation and Server Actions in NextJs 13)
+- https://www.youtube.com/watch?v=a8b3EN0R-M4 (Hamed Bahram : Send Emails Using React Email, Resend, & Server Actions in NextJs)
+- https://www.youtube.com/watch?v=a2oa0qL4CB8 (GTCoding : Build A Contact Us Page with Next.js 13, MongoDB, and Tailwind CSS)
+
+

@@ -1,6 +1,5 @@
 'use client'
 import { Dialog, Transition } from '@headlessui/react'
-import { stringify } from 'querystring'
 import { Fragment, useState } from 'react'
 
 export default function ModalHandler(props) {
@@ -22,16 +21,22 @@ export default function ModalHandler(props) {
 
   return (
     <>
-      <div
+      {/* <div
         className={classNameValue}
         style={{ top: `${coordY}px`, left: `${coordX}px` }}
         onClick={openModal}
       >
-        {/* <button type="button" onClick={openModal} className="rounded-md"> */}
-        {/* <button type="button"> */}
         Lire la Microfiction
-        {/* </button> */}
-      </div>
+      </div> */}
+      <img
+        className={classNameValue}
+        src="img/ginkgo-biloba-leaf.svg"
+        width="10"
+        height="10"
+        alt=""
+        style={{ top: `${coordY}px`, left: `${coordX}px` }}
+        onClick={openModal}
+      />
 
       <Transition appear show={isOpen} as={Fragment}>
         <Dialog as="div" className="relative z-10" onClose={closeModal}>
@@ -58,7 +63,7 @@ export default function ModalHandler(props) {
                 leaveFrom="opacity-100 scale-100"
                 leaveTo="opacity-0 scale-95"
               >
-                <Dialog.Panel className="w-full max-w-md font-typewriter transform overflow-hidden rounded-2xl bg-white p-6 text-left align-middle shadow-xl transition-all">
+                <Dialog.Panel className="dialog-reunion w-full max-w-md font-typewriter transform overflow-y-auto rounded-2xl bg-white p-8 pb-12 text-left align-middle transition-all">
                   <Dialog.Title
                     as="h3"
                     className="text-2xl font-medium leading-6 text-gray-900"
