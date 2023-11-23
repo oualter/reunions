@@ -20,19 +20,19 @@ export default function RootLayout({
   return (
     <html lang="fr">
       <body className="container mx-auto min-h-screen flex flex-col px-4 pb-2 radial-bg grid-bg">
-        <header className="pt-5">
-          <div className="logo brand-name text-center font-medium text-7xl font-archisticonormal">
-            Places de la Réunion
-            <div className="brand-leitmotiv text-3xl">
-              Heureusement que le ginkgo biloba
+        <div className="wrapper-page bg-white opacity-90 ">
+          <header className="p-5 fixed z-10">
+            <div className="logo brand-name text-center font-medium text-7xl font-archisticonormal">
+              Places de la Réunion
+              <div className="brand-leitmotiv text-3xl">
+                Heureusement que le ginkgo biloba
+              </div>
             </div>
-          </div>
-          <NavBar />
-        </header>
+            <NavBar />
+          </header>
 
-        <main className="grow">
-          {children}
-        </main>
+          <main className="grow overflow-hidden border-2">{children}</main>
+        </div>
         <FooterBar />
       </body>
     </html>

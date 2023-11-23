@@ -11,26 +11,31 @@
   html {
     font-family: Helvetica, Arial, sans-serif;
     color: #44403c;
-    font-size:0.9rem
+    font-size: 0.9rem;
     /* color: #d6d3d1; */
+  }
+  body {
+    background-image: url(./../../public/img/bg-01.webp);
+    background-repeat: no-repeat;
+    background-size: cover;
   }
 }
 
-.grid-bg{
-  background: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32' width='32' height='32' fill='none' stroke='%23f1f5f9'%3e%3cpath d='M0 .5H31.5V32'/%3e%3c/svg%3e"), 
-  radial-gradient(
-    circle,
-    rgba(221, 243, 145, 0.1) 0%,
-    rgba(59, 46, 5, 0.1) 35%,
-    rgba(246, 135, 0, 0.134) 90%
-  );
-  background-blend-mode: luminosity;
+.grid-bg {
+ /* background: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32' width='32' height='32' fill='none' stroke='%23f1f5f9'%3e%3cpath d='M0 .5H31.5V32'/%3e%3c/svg%3e"),
+    radial-gradient(
+      circle,
+      rgba(221, 243, 145, 0.1) 0%,
+      rgba(59, 46, 5, 0.1) 35%,
+      rgba(246, 135, 0, 0.134) 90%
+    );
+  background-blend-mode: luminosity;*/
 }
 
-.dialog-reunion{
-  background:transparent url(../../public/img/rip.svg) no-repeat 0 100%;
+.dialog-reunion {
+  background: transparent url(../../public/img/rip.svg) no-repeat 0 100%;
   scrollbar-width: thin;
-  scrollbar-color:rgba(59, 46, 5, 0.3)
+  scrollbar-color: rgba(59, 46, 5, 0.3);
 }
 
 .radial-bg {
@@ -49,18 +54,14 @@ header {
   position: relative;
 }
 header aside {
-  position: absolute;
-  top: 0;
-  left: 0;  
-  height: 100vh;
   padding: 2.5rem;
   z-index: 2;
   transition: background 0.3s ease;
 }
-aside.open{
-/* background-color: rgba(238,238,238,0.2); */
+aside.open {
+  /* background-color: rgba(238,238,238,0.2); */
 }
-nav{
+nav {
   font-family: typewriter;
   font-size: 0.8rem;
   white-space: nowrap;
@@ -68,8 +69,7 @@ nav{
 header nav {
   width: 0;
   overflow: hidden;
-  transition: all 0.3s ease;  
-
+  transition: all 0.3s ease;
 }
 header nav.open {
   /* max-width: 500px; */
@@ -116,21 +116,21 @@ header nav ul {
   flex-direction: column;
   /* gap: 1rem; */
 }
-nav#chapters{
+nav#chapters {
   margin-top: 3rem;
 }
 
-header nav#chapters p{
+header nav#chapters p {
   margin-bottom: 1.5rem;
 }
 
-.hx_level2{
+.hx_level2 {
   font-size: 1.5rem;
   font-weight: bold;
 }
 
-.coordXY{
-  text-indent:-10000px
+.coordXY {
+  text-indent: -10000px;
 }
 form > div {
   @apply flex flex-col gap-2;

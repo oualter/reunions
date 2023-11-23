@@ -1,19 +1,14 @@
 const ImagePlaceHolder = () => {
   return (
-      <article>
-        {/* <div className="img-placeholder text-center max-w-[60rem] mx-auto relative mix-blend-multiply"> */}
-        {/* <div className="img-placeholder text-center max-w-[864px] mx-auto relative mix-blend-multiply"> */}
-        <div className="img-placeholder text-center max-w-[1050px] mx-auto relative mix-blend-multiply">
-          <div className="bg-emerald-100 mix-blend-multiply blur-[25px]  w-[200px] h-[200px] rounded-full grid place-content-center absolute top-[50%] mt-[-55px] ml-[-100px] left-[50%]"></div>
-          <img
-            src="img/croquis-reunion.png"
-            width="500"
-            height="500"
-            alt=""
-            className="mx-auto min-w-full"
-          />
-        </div>
-      </article>
+    <article className="img-placeholder text-center w-max mx-auto relative mix-blend-darken">
+      <img
+        src="img/croquis-reunion.png"
+        width="500"
+        height="500"
+        alt=""
+        className="w-[120rem] -top-[111px] -mb-[111px] relative "
+      />
+    </article>
   )
 }
 export default ImagePlaceHolder
