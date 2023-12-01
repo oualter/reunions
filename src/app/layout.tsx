@@ -1,5 +1,5 @@
 import './globals.css'
-import NavBar from './components/NavBar'
+import NavBar from './components/NavBar.jsx'
 import FooterBar from './components/FooterBar'
 import GetChapitres from './components/GetChapitres'
 
