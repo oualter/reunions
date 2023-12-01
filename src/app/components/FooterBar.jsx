@@ -1,9 +1,9 @@
 import FooterLink from './FooterLink'
 export default function FooterBar () {
   return (
-    <footer className="border-t py-3 ">
+    <footer className="border-t py-3 Oswald ">
       <nav className="flex justify-center">
-        <ul className="text-xs flex gap-2">
+        <ul className="text-xl font-bold flex gap-2">
           <li className="mx-10">
             &copy;
             <FooterLink href="https://www.1651ouest.fr/">

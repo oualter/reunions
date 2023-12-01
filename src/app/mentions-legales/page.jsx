@@ -8,7 +8,7 @@ export default async function mentionsLegales() {
 
 
   return (
-    <article className="lg:max-w-[700px] mx-auto my-12">
+    <article className="lg:max-w-[700px] mx-auto my-6">
       <h1 className="text-5xl">{Titre}</h1>
       {Contenu.map((elt, index) => (
         <p className="my-4" key={index}>

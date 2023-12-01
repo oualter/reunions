@@ -11,7 +11,7 @@ export default function NavBar() {
   }
 
   return (
-    <aside className={isOpen ? 'open' : 'close'}>
+    <aside id="navigation-container" className={isOpen ? 'open' : 'close'}>
       <button className="nav-toggle" onClick={toggleClass}>
         <span className="bar-top"></span>
         <span className="bar-mid"></span>
@@ -40,12 +40,12 @@ export default function NavBar() {
       </nav>
       <nav id="chapters" className={isOpen ? 'open' : 'close'}>
         {/* <nav id="chapters" className={menuOpen ? 'open' : ''}> */}
-        <p className="text-5xl font-archisticonormal">Chapitres</p>
+        <p className="text-5xl mb-6">Chapitres</p>
         <ul className="leading-10">
           {chapitres.map((chapitre) => (
             <li key={chapitre.id}>
               <Link
-                className="font-archisticonormal text-xl hover:font-bold"
+                className="text-xl hover:font-bold"
                 href={chapitre.month + `/`}
               >
                 {chapitre.title}
