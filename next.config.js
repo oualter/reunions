@@ -1,8 +1,4 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {
-  'mentions-legales': {
-    scope: ['find'],
-  },
-}
+const nextConfig = {}
 
 module.exports = nextConfig
