@@ -11,7 +11,7 @@
   "dependencies": {
     "@headlessui/react": "^1.7.17",
     "@types/nodemailer": "^6.4.13",
-    "next": "^14.0.0",
+    "next": "^14.0.3",
     "nodemailer": "^6.9.7",
     "qs": "^6.11.2",
     "react": "^18.2.0",
