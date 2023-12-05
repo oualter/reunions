@@ -1,6 +1,5 @@
-const BASE_URL = 'http://127.0.0.1:1337'
-
-const url = 'http://127.0.0.1:1337/api/le-livre?populate=*'
+const CMS_URL = process.env.CMS_URL
+const url = `${CMS_URL}/api/le-livre?populate=*`
 const response = await fetch(url)
 const body = await response.json()
 console.log('body => ', body)

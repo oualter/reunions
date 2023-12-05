@@ -1,12 +1,9 @@
 import ImagePlaceHolder from '../components/ImagePlaceHolder'
 import ModalHandler from '../components/ModalHandler'
 
-const BASE_URL = 'http://127.0.0.1:1337'
-
-// const BASE_URL = 'https://mon-cours-next-js-13.vercel.app'
-
+const CMS_URL = process.env.CMS_URL
 const fetchFictions = async () => {
-  const fictions = await fetch(`${BASE_URL}/api/place-de-la-reunions/`, {
+  const fictions = await fetch(`${CMS_URL}/api/place-de-la-reunions/`, {
     method: 'GET',
     headers: {
       'Content-Type': 'application/json',

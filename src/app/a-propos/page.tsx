@@ -1,6 +1,5 @@
-const BASE_URL = 'http://127.0.0.1:1337'
-
-const url = 'http://127.0.0.1:1337/api/a-propos'
+const CMS_URL = process.env.CMS_URL
+const url = `${CMS_URL}/api/a-propos`
 const response = await fetch(url)
 const body = await response.json()
 const { Titre, Contenu } = body.data.attributes
