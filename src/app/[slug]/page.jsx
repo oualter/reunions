@@ -2,7 +2,8 @@ import ImagePlaceHolder from '../components/ImagePlaceHolder'
 import ModalHandler from '../components/ModalHandler'
 
 const CMS_URL = process.env.CMS_URL
-const url = `${CMS_URL}/api/place-de-la-reunions/`
+// const url = `${CMS_URL}/api/place-de-la-reunions/`
+const url = `${CMS_URL}/api/microfictions/`
 
 export default async function monthFictions(params ) {
   try{
@@ -21,7 +22,7 @@ export default async function monthFictions(params ) {
         return eltWithoutAccents == params.params.slug
       })
       return (
-        <section className="relative w-max mx-auto border-4">
+        <section className="relative">
           <ImagePlaceHolder />
           {getSlugChapters.map((elt) => {
             const {

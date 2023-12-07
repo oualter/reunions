@@ -20,7 +20,7 @@ export default function RootLayout({
   return (
     <html lang="fr">
       <body className="container mx-auto min-h-screen flex flex-col pb-2 radial-bg grid-bg">
-          <header className="bg-white opacity-80">
+          <header>
             <div className="logo brand-name uppercase text-7xl Oswald">
               Places de la Réunion
               <div className="brand-leitmotiv text-3xl">
@@ -29,7 +29,7 @@ export default function RootLayout({
             </div>            
           </header>
           <NavBar />
-        <main className="grow overflow-hidden bg-white opacity-80">{children}</main>
+        <main className="grow overflow-hidden">{children}</main>
         <FooterBar />
       </body>
     </html>

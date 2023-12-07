@@ -20,7 +20,8 @@ const Contact: FC = () => {
   return (
     <form
       onSubmit={handleSubmit(onSubmit)}
-      className="py-4 mt-4 flex flex-col gap-5 max-w-xl mx-auto"
+      // className="py-4 mt-4 flex flex-col gap-5 max-w-xl mx-auto"
+      className="py-4 mt-4 flex flex-col gap-5 mx-auto"
     >
       
         <label htmlFor="username">Prénom et nom :</label>
@@ -46,7 +47,7 @@ const Contact: FC = () => {
       
       <button
         type="submit"
-        className="hover:shadow-form bg-lime-700 p-3 text-white font-bold"
+        className="hover:shadow-form bg-slate-700 p-3 text-white font-bold"
       >
         Envoyer
       </button>
