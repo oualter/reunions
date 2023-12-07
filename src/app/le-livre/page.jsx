@@ -1,8 +1,5 @@
 const CMS_URL = process.env.CMS_URL
 const url = `${CMS_URL}api/le-livre?populate=*`
-// const url = `${CMS_URL}/api/le-livress`
-// const url = `https%3A%2F%2Fstrapi-y8uv.onrender.com%2Fapi%2Fle-livre`
-// const url = `https://strapi-y8uv.onrender.com/api/le-livre`
 
 export default async function leLivre() {
   try {
@@ -28,13 +25,6 @@ export default async function leLivre() {
       </article>
     )
     } else {
-      return(<div>
-      Status de la réponse : {response.status}
-      <br />
-      CMS_URL : {CMS_URL}
-      <br />
-      url : {url}
-      </div>)
         if (response.status === 404) throw new Error('404, Not found');
         if (response.status === 500) throw new Error('500, internal server error');
         if (!response.ok) throw new Error(response.status);
