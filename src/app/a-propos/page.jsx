@@ -18,6 +18,13 @@ export default async function apropos() {
         </article>
       )
     } else {
+      return(<div>
+      Status de la réponse : {response.status}
+      <br />
+      CMS_URL : {CMS_URL}
+      <br />
+      url : {url}
+      </div>)
       if (response.status === 404) throw new Error('404, Not found');
       if (response.status === 500) throw new Error('500, internal server error');
       if (!response.ok) throw new Error(response.status);
