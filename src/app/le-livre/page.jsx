@@ -1,8 +1,8 @@
 const CMS_URL = process.env.CMS_URL
-// const url = `${CMS_URL}/api/le-livre?populate=*`
+const url = `${CMS_URL}api/le-livre?populate=*`
 // const url = `${CMS_URL}/api/le-livress`
 // const url = `https%3A%2F%2Fstrapi-y8uv.onrender.com%2Fapi%2Fle-livre`
-const url = `https://strapi-y8uv.onrender.com/api/le-livre`
+// const url = `https://strapi-y8uv.onrender.com/api/le-livre`
 
 export default async function leLivre() {
   try {

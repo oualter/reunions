@@ -2,7 +2,7 @@ import ImagePlaceHolder from '../components/ImagePlaceHolder'
 import ModalHandler from '../components/ModalHandler'
 
 const CMS_URL = process.env.CMS_URL
-const url = `${CMS_URL}/api/place-de-la-reunions/`
+const url = `${CMS_URL}api/place-de-la-reunions/`
 
 export default async function monthFictions(params ) {
   try{

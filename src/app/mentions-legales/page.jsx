@@ -1,5 +1,5 @@
 const CMS_URL = process.env.CMS_URL
-const url = `${CMS_URL}/api/mentions-legales`
+const url = `${CMS_URL}api/mentions-legales`
 
 
 export default async function mentionsLegales() {
