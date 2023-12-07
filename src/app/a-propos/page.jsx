@@ -1,5 +1,5 @@
 const CMS_URL = process.env.CMS_URL
-const url = `${CMS_URL}api/a-propos`
+const url = `${CMS_URL}/api/a-propos`
 
 export default async function apropos() {
   try {

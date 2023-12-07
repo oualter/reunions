@@ -1,5 +1,5 @@
 const CMS_URL = process.env.CMS_URL
-const url = `${CMS_URL}api/le-livre?populate=*`
+const url = `${CMS_URL}/api/le-livre?populate=*`
 
 export default async function leLivre() {
   try {
