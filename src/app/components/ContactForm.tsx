@@ -28,12 +28,14 @@ const Contact: FC = () => {
         <input
           type="text"
           placeholder="Prénom et nom"
+          id="username"
           {...register('username', { required: true })}
         />
       
         <label htmlFor="usermail">Email :</label>
         <input
           type="email"
+          id="usermail"
           placeholder="tartempion@pétété.fr"
           {...register('usermail', { required: true })}
         />
@@ -42,6 +44,7 @@ const Contact: FC = () => {
         <textarea
           placeholder="Entrez votre message ici. &Ccedil;a restera entre nous "
           className="h-32"
+          id="usermessage"
           {...register('usermessage', { required: true })}
         />
       
