@@ -7,9 +7,8 @@ export default function FooterBar () {
       <nav className="flex justify-center">
         <ul className="text-xl font-bold flex gap-2">
           <li className="mx-10">
-            &copy;&nbsp;
             <FooterLink href="https://www.1651ouest.fr/">
-              16.51 Ouest {yearToday}
+              &copy;&nbsp;16.51 Ouest {yearToday}
             </FooterLink>
           </li>
           <li className="mx-10">

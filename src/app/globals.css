@@ -13,42 +13,46 @@
 
 @layer base {
   html {
-    font-family: Avenir, Helvetica, Arial, sans-serif;
-    color: #44403c;
+    /* font-family: Avenir, Helvetica, Arial, sans-serif; */
+    font-family: Oswal, Helvetica, Arial, sans-serif;
+    /* color: #44403c; */
+    color: #000;
     font-size: 0.9rem;
     /* color: #d6d3d1; */
+    background-color: transparent !important;
   }
   body {
     background-image: url(./../../public/img/bg-01.webp);
     background-repeat: no-repeat;
     background-size: cover;
+    font-family: Avenir, Helvetica, Arial, sans-serif;
   }
-  .container{
-    position: relative
+  .container {
+    position: relative;
   }
-  header, main {
-    background-color:rgba(255,255,255,0.9)
+  header,
+  main {
+    background-color: rgba(255, 255, 255, 0.9);
+  }
+  footer {
+    font-family: Oswald, Helvetica, Arial, sans-serif;
   }
 }
-.dialog-reunion {
-  background: transparent url(../../public/img/rip.svg) no-repeat 0 100%;
-  scrollbar-width: thin;
-  scrollbar-color: rgba(59, 46, 5, 0.3);
-}
+
 header {
   position: sticky;
   padding: 0.75rem 2.25rem;
   top: 0;
-  z-index: 10;
+  z-index: 10000;
   width: 100%;
 }
 aside#navigation-container {
   position: sticky;
   height: 0;
   width: auto;
-  top:140px;
-  padding-left:2.5rem;
-  z-index:20
+  top: 140px;
+  padding-left: 2.5rem;
+  z-index: 20;
 }
 aside#navigation-container nav {
   font-family: Oswald;
@@ -98,7 +102,6 @@ aside#navigation-container nav.open {
   transform-origin: 15% 95%;
 }
 
-
 nav#chapters {
   margin-top: 3rem;
 }
@@ -121,6 +124,39 @@ form > div {
 input,
 textarea {
   @apply shadow-md px-6 py-2 border border-slate-300;
+}
+
+#headlessui-portal-root {
+  z-index: 100;
+}
+
+.pin {
+  position: absolute;
+  background-color: red;
+  border-radius: 50%;
+  z-index: 100;
+  cursor: pointer;
+}
+main > *:not(section) {
+  position: relative;
+  z-index: 100;
+}
+
+.dialog-panel-wrapper {
+  background: transparent url(../../public/img/rip.svg) no-repeat 0 100%;
+}
+.dialog-reunion {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(59, 46, 5, 0.3);
+  max-height: 50vh;
+  overflow-y: auto;
+  padding-bottom: 4rem;
+  /* outline: 5px solid red; */
+}
+
+#tsparticles {
+  position: relative;
+  z-index: 10000;
 }
 
 :root {

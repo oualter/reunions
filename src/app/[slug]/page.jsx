@@ -1,67 +1,76 @@
+'use server'
+import { MicrofictionsContextProvider } from '../contexts/microfictions.context'
 import ImagePlaceHolder from '../components/ImagePlaceHolder'
-import ModalHandler from '../components/ModalHandler'
+import PinsList from '../components/PinsList'
+import Modal from '../components/Modal'
+import YearsSlider from '../components/YearsSlider'
+import Confettis from '../components/Confettis'
+import { GetMicroFictions } from '../../lib/microfictions'
 
-const CMS_URL = process.env.CMS_URL
-// const url = `${CMS_URL}/api/place-de-la-reunions/`
-const url = `${CMS_URL}/api/microfictions/`
 
-export default async function monthFictions(params ) {
-  try{
-    const response = await fetch(url)
-    if (response.ok) {
-    const body = await response.json()
-    const goodFictions = body
-      const reallyGoodFictions = goodFictions.data.map((element) => {
-        return element.attributes
-      })
-      const getSlugChapters = reallyGoodFictions.filter((elt) => {
-        const eltWithoutAccents = elt.Mois.normalize('NFD').replace(
-          /[\u0300-\u036f]/g,
-          ''
-        )
-        return eltWithoutAccents == params.params.slug
-      })
-      return (
+export default async function showFictions(params) {
+  const microF = await GetMicroFictions(params)
+  const currentSlug = params.params.slug
+  const { microfictions } = microF
+  // ajoute la propriété slug (avec le bon mois qui correspond) à l'objet en cours 
+  const microfictionsDateFixed = microfictions.map((elt) => {
+    let { Date } = elt
+    if (Date.includes('/01/')) {
+      elt['slug'] = 'janvier'
+    }
+    if (Date.includes('/02/')) {
+      elt['slug'] = 'fevrier'
+    }
+    if (Date.includes('/03/')) {
+      elt['slug'] = 'mars'
+    }
+    if (Date.includes('/04/')) {
+      elt['slug'] = 'avril'
+    }
+    if (Date.includes('/05/')) {
+      elt['slug'] = 'mai'
+    }
+    if (Date.includes('/06/')) {
+      elt['slug'] = 'juin'
+    }
+    if (Date.includes('/07/')) {
+      elt['slug'] = 'juillet'
+    }
+    if (Date.includes('/08/')) {
+      elt['slug'] = 'aout'
+    }
+    if (Date.includes('/09/')) {
+      elt['slug'] = 'septembre'
+    }
+    if (Date.includes('/10/')) {
+      elt['slug'] = 'octobre'
+    }
+    if (Date.includes('/11/')) {
+      elt['slug'] = 'novembre'
+    }
+    if (Date.includes('/12/')) {
+      elt['slug'] = 'decembre'
+    }
+    return elt
+  })
+
+  // affiche les épingles du mois sélectionné
+  const microfictionsFiltered = microfictionsDateFixed.filter((elt) => {
+    return elt.slug == currentSlug
+  })
+
+  return (
+    <MicrofictionsContextProvider value={{ microfictionsFiltered }}>
+      {/* <main className="grow overflow-hidden" id="headlessui-portal-root"> */}
+      <main className="grow overflow-hidden">
         <section className="relative">
           <ImagePlaceHolder />
-          {getSlugChapters.map((elt) => {
-            const {
-              Jour_du_mois,
-              Mois,
-              Annee,
-              Texte_microfiction,
-              createdAt,
-              Heure,
-            } = elt
-            const randX = Math.round(Math.random() * 1000) + 450
-            const randY = Math.round(Math.random() * 650) + 120
-            return (         
-              <ModalHandler
-                key={createdAt}
-                classNameValue="coordXY absolute h-8 w-8  cursor-pointer rounded-full"
-                coordX={randX}
-                coordY={randY}
-                year={Annee}
-                month={Mois}
-                day={Jour_du_mois}
-                time={Heure}
-                content={Texte_microfiction}
-              />
-            )
-          })}
+          <PinsList />
+          <YearsSlider />
+          <Modal />
         </section>
-      )
-    } else {
-      return(<div>ya erreur</div>)
-      // Custom message for failed HTTP codes
-      if (response.status === 404) throw new Error('404, Not found');
-      if (response.status === 500) throw new Error('500, internal server error');
-      // For any other server error
-      if (!response.ok) throw new Error(response.status);
-    }
-    
-  } catch (error) {
-    console.error('Fetch', error);
-  }
-
+      </main>
+      <Confettis />
+    </MicrofictionsContextProvider>
+  )
 }
