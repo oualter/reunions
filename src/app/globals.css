@@ -52,7 +52,7 @@ aside#navigation-container {
   width: auto;
   top: 140px;
   padding-left: 2.5rem;
-  z-index: 20;
+  z-index: 200;
 }
 aside#navigation-container nav {
   font-family: Oswald;

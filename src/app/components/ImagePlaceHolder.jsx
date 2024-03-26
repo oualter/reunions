@@ -1,21 +1,32 @@
 import Image from 'next/image'
-import reunionMapPic from '../../../public/img/croquis-reunion.png'
-const ImagePlaceHolder = (props) => {
+
+const CMS_URL = process.env.CMS_URL
+
+export default async function ImagePlaceHolder(props) {
+  const defaultImgMap = await fetch(CMS_URL + '/pingenerator/mapimage')
+  if (!defaultImgMap.ok) {
+    throw new Error(
+      `CMS returned ${defaultImgMap.status} for ${CMS_URL}/pingenerator/mapimage`
+    )
+  }
+  const defaultImgMapJson = await defaultImgMap.json()
+  let defaultImgMapUrl = await defaultImgMapJson.imageToPinOnUrl
+  if (defaultImgMapUrl.includes('localhost')) {
+    defaultImgMapUrl = defaultImgMapUrl.replace('localhost','127.0.0.1')
+  }
+
   return (
-    <article
-      className="img-placeholder text-center mix-blend-darken"
-    >
+    <article className="img-placeholder text-center mix-blend-darken">
       <div className="image-wrapper w-[1080px] mx-auto relative">
         <Image
-          src={reunionMapPic}
-          width="1080"
-          height="927"
+          src={defaultImgMapUrl}
+          width={1080}
+          height={927}
+          priority={true}
           alt="Place de La Réunion"
-          // className="relative w-[100%]"
           className="relative w-[auto] mx-auto"
         />
       </div>
     </article>
   )
 }
-export default ImagePlaceHolder
