@@ -16,8 +16,8 @@ export default async function ImagePlaceHolder(props) {
   }
 
   return (
-    <article className="img-placeholder text-center mix-blend-darken">
-      <div className="image-wrapper w-[1080px] mx-auto relative">
+    <article className="img-placeholder text-center ">
+      <div className="image-wrapper sm:w-[1080px] mx-auto relative mix-blend-darken ">
         <Image
           src={defaultImgMapUrl}
           width={1080}

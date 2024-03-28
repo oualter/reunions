@@ -61,15 +61,12 @@ export default async function showFictions(params) {
 
   return (
     <MicrofictionsContextProvider value={{ microfictionsFiltered }}>
-      {/* <main className="grow overflow-hidden" id="headlessui-portal-root"> */}
-      <main className="grow overflow-hidden">
-        <section className="relative">
-          <ImagePlaceHolder />
-          <PinsList />
-          <YearsSlider />
-          <Modal />
-        </section>
-      </main>
+      <section className="relative">
+        <ImagePlaceHolder />
+        <PinsList />
+        <YearsSlider />
+        <Modal />
+      </section>
       <Confettis />
     </MicrofictionsContextProvider>
   )

@@ -6,7 +6,7 @@ export default function NavLink({ children, href, prefetch }) {
   const pathname = usePathname()
   if (href === pathname) {
     return (
-      <span className="Oswald text-3xl font-bold">
+      <span className="text-base">
         {children}
       </span>
     )
@@ -15,7 +15,7 @@ export default function NavLink({ children, href, prefetch }) {
     <Link
       href={href}
       prefetch={prefetch}
-      className="Oswald text-3xl hover:font-bold"
+      className="text-base hover:font-bold"
     >
       {children}
     </Link>

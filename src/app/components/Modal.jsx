@@ -1,19 +1,17 @@
 'use client'
-import { useContext } from 'react'
+import { useContext, Fragment } from 'react'
 import microfictionsContext from '../contexts/microfictions.context'
 import { Dialog, Transition } from '@headlessui/react'
-import { Fragment } from 'react'
 
 const Modal = (props) => {
   const { closeModal, isOpen, modalAttr } = useContext(microfictionsContext)
-  // console.log('GingkoBiloba => ', GingkoBiloba)
   if (!modalAttr) {
     return false
   }
-  //   console.log(modalAttr.getNamedItem('datadate').value)
   const mfDate = modalAttr.getNamedItem('datadate').value
   const mfHour = modalAttr.getNamedItem('datahour').value
   const mfText = modalAttr.getNamedItem('datatext').value
+
 
   return (
     <>
