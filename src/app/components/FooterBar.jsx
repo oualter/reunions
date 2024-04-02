@@ -3,9 +3,9 @@ export default function FooterBar () {
   let today = new Date();
   let yearToday = today.getFullYear()
   return (
-    <footer className="shrink border-t py-3 bg-white/[0.85] sm:bg-transparent ">
-      <nav className="sm:flex justify-center bg-white/50">
-        <ul className="sm:text-xl text-sm sm:font-bold sm:flex sm:gap-12 px-3">
+    <footer className="shrink border-t py-3 bg-white/[0.85] ">
+      <nav className="sm:flex justify-center">
+        <ul className="sm:text-bse text-sm sm:flex sm:gap-12 px-3">
           <li>
             <FooterLink href="https://www.1651ouest.fr/">
               &copy;&nbsp;16.51 Ouest {yearToday}

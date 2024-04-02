@@ -6,13 +6,18 @@ import Modal from '../components/Modal'
 import YearsSlider from '../components/YearsSlider'
 import Confettis from '../components/Confettis'
 import { GetMicroFictions } from '../../lib/microfictions'
-
+import { chapitres } from '../data'
 
 export default async function showFictions(params) {
   const microF = await GetMicroFictions(params)
+
+  const pageTitleObj = chapitres.filter((elt) => {
+    return elt.month === params.params.slug
+  })
+  const pageTitle =  pageTitleObj[0].title
   const currentSlug = params.params.slug
   const { microfictions } = microF
-  // ajoute la propriété slug (avec le bon mois qui correspond) à l'objet en cours 
+  // ajoute la propriété slug (avec le bon mois qui correspond) à l'objet en cours
   const microfictionsDateFixed = microfictions.map((elt) => {
     let { Date } = elt
     if (Date.includes('/01/')) {
@@ -58,10 +63,12 @@ export default async function showFictions(params) {
   const microfictionsFiltered = microfictionsDateFixed.filter((elt) => {
     return elt.slug == currentSlug
   })
+  // console.log('microfictionsFiltered => ', microfictionsFiltered)
 
   return (
     <MicrofictionsContextProvider value={{ microfictionsFiltered }}>
-      <section className="relative">
+      <section className="map-page relative">
+        <h1>{pageTitle}</h1>
         <ImagePlaceHolder />
         <PinsList />
         <YearsSlider />

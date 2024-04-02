@@ -10,8 +10,33 @@ const Modal = (props) => {
   }
   const mfDate = modalAttr.getNamedItem('datadate').value
   const mfHour = modalAttr.getNamedItem('datahour').value
-  const mfText = modalAttr.getNamedItem('datatext').value
+  let MFDay = mfDate.split('/')[0]
+  let MFMonth = mfDate.split('/')[1]
+  let MFYear = mfDate.split('/')[2]
 
+  const dateToBeFormatted =
+    MFYear + '-' + MFMonth + '-' + MFDay /*+ 'T' + mfHour+':00'*/
+  let displayDate = new Date(dateToBeFormatted).toLocaleDateString('fr-fr', {
+    weekday: 'long',
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric',
+  })
+  let finalDisplayDate
+  if (MFYear.includes('-')) {
+    let stringToReplace =
+      displayDate.split(' ')[displayDate.split(' ').length - 1]
+    finalDisplayDate = displayDate.replace(
+      stringToReplace,
+      '-' + stringToReplace
+    )
+  } else {
+    finalDisplayDate = displayDate
+  }
+
+  const mfText = modalAttr
+    .getNamedItem('datatext')
+    .value.replaceAll(`\n`, `<br/>`)
 
   return (
     <>
@@ -46,13 +71,10 @@ const Modal = (props) => {
                       as="h3"
                       className="text-2xl font-medium leading-6 text-gray-900"
                     >
-                      {mfDate} - {mfHour}
+                      {finalDisplayDate} <br /> {mfHour}
                     </Dialog.Title>
                     <div className="mt-2 pb-4 text-lg">
-                      {/* {Texte_microfiction.map((para) => {
-                        return <p key={coordX}>{para}</p>
-                      })} */}
-                      <p>{mfText}</p>
+                      <p dangerouslySetInnerHTML={{ __html: mfText }} />
                     </div>
                   </Dialog.Panel>
                 </div>

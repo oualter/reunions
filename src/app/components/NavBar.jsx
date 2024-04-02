@@ -12,18 +12,10 @@ export default function NavBar() {
     setOpen(!isOpen)
   }
   const handleSubMenu = ()=>{
-    console.log('isMenuOpen => ', isMenuOpen)
     setIsMenuOpen(!isMenuOpen)
   }
 
   return (
-    // <aside id="navigation-container" className={isOpen ? 'open' : 'close'}>
-    //   <button className="nav-toggle" onClick={toggleClass}>
-    //     <span className="bar-top"></span>
-    //     <span className="bar-mid"></span>
-    //     <span className="bar-bot"></span>
-    //   </button>
-
     <nav
       id="main-navigation"
       className={
@@ -74,21 +66,5 @@ export default function NavBar() {
         </li>
       </ul>
     </nav>
-    //   <nav id="chapters" className={isOpen ? 'open' : 'close'}>
-    //     <p className="text-5xl mb-6">Chapitres</p>
-    //     <ul className="leading-10">
-    //       {chapitres.map((chapitre) => (
-    //         <li key={chapitre.id}>
-    //           <Link
-    //             className="text-xl hover:font-bold"
-    //             href={chapitre.month + `/`}
-    //           >
-    //             {chapitre.title}
-    //           </Link>
-    //         </li>
-    //       ))}
-    //     </ul>
-    //   </nav>
-    // </aside>
   )
 }

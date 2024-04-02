@@ -14,6 +14,8 @@ const MicrofictionsContextProvider = (props) => {
   let [initConfettis, setInitConfettis] = useState(false)
   const [selectedMicrofictions, setSelectedMicrofictions] = useState([])
   const mfArray = props.value.microfictionsFiltered
+    ? props.value.microfictionsFiltered
+    : props.value.microfictions
 
   const openModal = (e, value) => {
     setModalAttr(e.target.attributes)

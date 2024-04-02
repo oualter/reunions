@@ -37,7 +37,7 @@
   header {
     z-index: 10000;
   }
-  /* footer {
+  /* f ooter {
     font-family: Oswald, Helvetica, Arial, sans-serif;
   } */
 }
@@ -123,7 +123,7 @@ nav#main-navigation > ul ul li a {
     height: auto;
   }
   nav#main-navigation > ul ul li a {
-    margin: 0.5rem 0
+    margin: 0.5rem 0;
   }
 }
 /* .nav-toggle {
@@ -216,6 +216,24 @@ main > *:not(section) {
 #tsparticles {
   position: relative;
   z-index: 10000;
+}
+
+/* pages génériques */
+.generic-content h2 {
+  @apply text-2xl my-4;
+}
+.generic-content li {
+  @apply list-disc ml-4;
+}
+.generic-content a {
+  text-decoration: underline;
+}
+.generic-content p {
+  margin: 1.5rem 0;
+}
+
+.map-page h1 {
+  @apply text-5xl text-center my-8;
 }
 
 :root {
