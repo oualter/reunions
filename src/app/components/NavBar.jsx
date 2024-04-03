@@ -2,7 +2,12 @@
 import { useState } from 'react'
 import Link from 'next/link'
 import NavLink from './NavLink'
-import { HiOutlineMenu, HiOutlineX, HiOutlineChevronDown } from 'react-icons/hi'
+import {
+  HiOutlineMenu,
+  HiOutlineX,
+  HiOutlineChevronDown,
+  HiOutlineChevronUp,
+} from 'react-icons/hi'
 import { chapitres } from '../data'
 
 export default function NavBar() {
@@ -11,7 +16,7 @@ export default function NavBar() {
   const toggleClass = () => {
     setOpen(!isOpen)
   }
-  const handleSubMenu = ()=>{
+  const handleSubMenu = () => {
     setIsMenuOpen(!isMenuOpen)
   }
 
@@ -19,13 +24,13 @@ export default function NavBar() {
     <nav
       id="main-navigation"
       className={
-        isOpen ? 'open relative sm:basis-1/3' : 'close relative sm:basis-1/3'
+        isOpen ? 'open relative lg:basis-1/3' : 'close relative lg:basis-1/3'
       }
       aria-label="main"
     >
       <HiOutlineMenu
         size={40}
-        className="open-btn sm:hidden cursor-pointer sm:static fixed top-4 right-2"
+        className="open-btn lg:hidden cursor-pointer sm:static fixed top-4 right-2"
         onClick={toggleClass}
       />
       <HiOutlineX
@@ -33,14 +38,18 @@ export default function NavBar() {
         className="close-btn sm:hidden cursor-pointer sm:static fixed top-4 right-2"
         onClick={toggleClass}
       />
-      <ul className="hidden sm:flex h-auto sm:w-auto w-full bg-white sm:bg-transparent">
+      <ul className="hidden lg:flex h-auto lg:w-auto w-full bg-white lg:bg-transparent">
         <li
           onClick={handleSubMenu}
           className={isMenuOpen ? 'chapters open' : 'chapters close'}
         >
           <NavLink href="#">
             Chapitres
-            <HiOutlineChevronDown size={15} className="has-submenu" />
+            {!isMenuOpen ? (
+              <HiOutlineChevronDown size={15} className="has-submenu" />
+            ) : (
+              <HiOutlineChevronUp size={15} className="has-submenu" />
+            )}
           </NavLink>
           <ul>
             {chapitres.map((chapitre) => (
