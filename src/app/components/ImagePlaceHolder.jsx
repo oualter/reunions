@@ -10,7 +10,9 @@ export default async function ImagePlaceHolder(props) {
     )
   }
   const defaultImgMapJson = await defaultImgMap.json()
+  console.log('defaultImgMapJson => ', defaultImgMapJson)
   let defaultImgMapUrl = await defaultImgMapJson.imageToPinOnUrl
+  console.log('defaultImgMapUrl => ', defaultImgMapUrl)
   if (defaultImgMapUrl.includes('localhost')) {
     defaultImgMapUrl = defaultImgMapUrl.replace('localhost','127.0.0.1')
   }
