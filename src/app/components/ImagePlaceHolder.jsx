@@ -10,9 +10,7 @@ export default async function ImagePlaceHolder(props) {
     )
   }
   const defaultImgMapJson = await defaultImgMap.json()
-  console.log('defaultImgMapJson => ', defaultImgMapJson)
   let defaultImgMapUrl = await defaultImgMapJson.imageToPinOnUrl
-  console.log('defaultImgMapUrl => ', defaultImgMapUrl)
   if (defaultImgMapUrl.includes('localhost')) {
     defaultImgMapUrl = defaultImgMapUrl.replace('localhost','127.0.0.1')
   }
@@ -25,6 +23,7 @@ export default async function ImagePlaceHolder(props) {
           width={1080}
           height={927}
           priority={true}
+          unoptimized={true}
           alt="Place de La Réunion"
           className="relative w-[auto] mx-auto"
         />
