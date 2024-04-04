@@ -23,7 +23,7 @@ export default async function ImagePlaceHolder(props) {
           width={1080}
           height={927}
           priority={true}
-          unoptimized={true}
+          // unoptimized={true}
           alt="Place de La Réunion"
           className="relative w-[auto] mx-auto"
         />
