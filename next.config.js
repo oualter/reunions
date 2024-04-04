@@ -54,9 +54,12 @@ module.exports = {
     remotePatterns: [
       {
         // replace remote patterns when production
-        protocol: 'http',
-        hostname: '127.0.0.1',
-        port: '1337',
+        protocol: 'https',
+        hostname: 'strapi-bci8.onrender.com',
+        // port: '1337',
+        // protocol: 'http',
+        // hostname: '127.0.0.1',
+        // port: '1337',
         pathname: '/uploads/**',
       },
     ],
