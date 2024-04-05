@@ -2,13 +2,16 @@
 import { useContext } from 'react'
 import microfictionsContext from '../contexts/microfictions.context'
 
+
 const Pin = (props) => {
   const { coordX, coordY, Date, Heure, Texte_microfiction, GingkoBiloba } =
     props
   const { openModal } = useContext(microfictionsContext)
+
+
   return (
     <div
-      className="pin "
+      className="pin"
       style={{
         width: '10px',
         height: '10px',

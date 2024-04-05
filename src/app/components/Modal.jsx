@@ -59,13 +59,15 @@ const Modal = (props) => {
               <Transition.Child
                 as={Fragment}
                 enter="ease-out duration-300"
-                enterFrom="opacity-0 scale-95"
-                enterTo="opacity-100 scale-100"
-                leave="ease-in duration-200"
-                leaveFrom="opacity-100 scale-100"
-                leaveTo="opacity-0 scale-95"
+                enterFrom="opacity-0 scale-[0]"
+                enterTo="opacity-100 scale-125"
+                leave="ease-in duration-150"
+                leaveFrom="opacity-100 scale-125"
+                leaveTo="opacity-0 scale-[0]"
               >
-                <div className="dialog-panel-wrapper rounded-2xl py-4">
+                <div
+                  className="dialog-panel-wrapper rounded-2xl py-4"
+                >
                   <Dialog.Panel className="dialog-reunion w-full max-w-md font-typewriter transform py-4 px-8  text-left align-middle transition-all">
                     <Dialog.Title
                       as="h3"
