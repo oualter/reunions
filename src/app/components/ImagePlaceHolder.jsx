@@ -16,8 +16,6 @@ export default async function ImagePlaceHolder(props) {
   }
 
   return (
-    <article className="img-placeholder text-center ">
-      <div className="image-wrapper sm:w-[1080px] mx-auto relative mix-blend-darken ">
         <Image
           src={defaultImgMapUrl}
           width={1080}
@@ -25,9 +23,7 @@ export default async function ImagePlaceHolder(props) {
           priority={true}
           // unoptimized={true}
           alt="Place de La Réunion"
-          className="relative w-[auto] mx-auto"
+          className="relative"
         />
-      </div>
-    </article>
   )
 }

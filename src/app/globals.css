@@ -86,7 +86,8 @@ nav#main-navigation > ul ul li a {
   margin: 1rem;
 }
 
-@media (max-width: 1024px) {
+
+@media (max-width: 1280px) {
   nav#main-navigation.close > ul {
     display: none;
   }
@@ -104,6 +105,8 @@ nav#main-navigation > ul ul li a {
   }
   nav#main-navigation.open > ul {
     position: absolute;
+    left: 0;
+    top: 110px;
     display: flex;
     flex-direction: column;
     padding: 1rem 0;
@@ -122,6 +125,11 @@ nav#main-navigation > ul ul li a {
   }
   nav#main-navigation > ul ul li a {
     margin: 0.5rem 0;
+  }
+}
+@media (max-width: 768px) {
+  nav#main-navigation.open > ul {
+    top: 60px;
   }
 }
 
@@ -160,6 +168,10 @@ textarea {
   border-radius: 50%;
   z-index: 100;
   cursor: pointer;
+  transition: scale 0.5s ease-in;
+}
+.pin:hover {
+  scale: 3 !important;
 }
 main > *:not(section) {
   position: relative;
@@ -168,7 +180,7 @@ main > *:not(section) {
 @media (max-width: 640px) {
   .slider-wrapper {
     right: -10px;
-    top:65px;
+    top: 65px;
     height: 350px;
   }
 }
@@ -208,6 +220,12 @@ main > *:not(section) {
   padding-bottom: 4rem;
   /* outline: 5px solid red; */
 }
+.dialog-reunion h3 {
+  margin-bottom: 2rem;
+}
+.dialog-reunion hr {
+  margin: 2rem 0;
+}
 
 #tsparticles {
   position: relative;
@@ -229,7 +247,7 @@ main > *:not(section) {
 }
 
 .map-page h1 {
-  @apply text-5xl text-center my-8;
+  @apply text-3xl text-center my-8;
 }
 
 :root {

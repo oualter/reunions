@@ -14,7 +14,7 @@ export default async function showFictions(params) {
   const pageTitleObj = chapitres.filter((elt) => {
     return elt.month === params.params.slug
   })
-  const pageTitle =  pageTitleObj[0].title
+  const pageTitle = pageTitleObj[0].title
   const currentSlug = params.params.slug
   const { microfictions } = microF
   // ajoute la propriété slug (avec le bon mois qui correspond) à l'objet en cours
@@ -69,8 +69,10 @@ export default async function showFictions(params) {
     <MicrofictionsContextProvider value={{ microfictionsFiltered }}>
       <section className="map-page relative">
         <h1>{pageTitle}</h1>
-        <ImagePlaceHolder />
-        <PinsList />
+        <article className="img-placeholder image-wrapper lg:w-[1080px] mx-auto relative mix-blend-darken ">
+          <ImagePlaceHolder />
+          <PinsList />
+        </article>
         <YearsSlider />
         <Modal />
       </section>

@@ -23,22 +23,20 @@ export default function NavBar() {
   return (
     <nav
       id="main-navigation"
-      className={
-        isOpen ? 'open relative lg:basis-1/3' : 'close relative lg:basis-1/3'
-      }
+      className={isOpen ? 'open md:basis-1/3' : 'close relative md:basis-1/3'}
       aria-label="main"
     >
       <HiOutlineMenu
         size={40}
-        className="open-btn lg:hidden cursor-pointer sm:static fixed top-4 right-2"
+        className="open-btn xl:hidden cursor-pointer xl:static fixed top-4 right-2 md:right-16 lg:right-12"
         onClick={toggleClass}
       />
       <HiOutlineX
         size={40}
-        className="close-btn sm:hidden cursor-pointer sm:static fixed top-4 right-2"
+        className="close-btn sm:hidden cursor-pointer xl:static fixed top-4 right-2 md:right-16 lg:right-12"
         onClick={toggleClass}
       />
-      <ul className="hidden lg:flex h-auto lg:w-auto w-full bg-white lg:bg-transparent">
+      <ul className="hidden md:flex h-auto md:w-full w-full bg-white xl:bg-transparent">
         <li
           onClick={handleSubMenu}
           className={isMenuOpen ? 'chapters open' : 'chapters close'}

@@ -30,7 +30,6 @@ const MicrofictionsContextProvider = (props) => {
 
   // filtre les épingles inférieures aux dates sélectionnées
   const handleDisplayPins = (event, value) => {
-    // console.log('handleDisplay event => ', event)
     const filteredMF = mfArray.filter((elt) => {
       let eltDate = parseInt(elt.Date.split('/')[2])
       return eltDate < parseInt(event) + 1

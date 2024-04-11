@@ -19,8 +19,10 @@ export default async function Home() {
   return (
     <MicrofictionsContextProvider value={{ microfictions }}>
       <section className="map-page relative">
-        <ImagePlaceHolder />
-        <PinsList />
+        <article className="img-placeholder image-wrapper lg:w-[1080px] mx-auto relative mix-blend-darken ">
+          <ImagePlaceHolder />
+          <PinsList />
+        </article>
         <YearsSlider />
         <Modal />
       </section>

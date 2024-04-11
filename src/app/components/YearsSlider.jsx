@@ -22,8 +22,7 @@ const YearsSlider = (props) => {
     const yearsArray = YearsArrFiltered(yearsArr)
     yearsArrToSlider = yearsArray
   })
-  const yearsDivisionCount = yearsArrToSlider ? yearsArrToSlider.length : 10
-
+  const yearsDivisionCount = (yearsArrToSlider < 16) ? yearsArrToSlider.length : 10
   if (!yearsArrToSlider) return false
 
   const yearsArrToSliderInt = Array.from(yearsArrToSlider, (x) => parseInt(x))

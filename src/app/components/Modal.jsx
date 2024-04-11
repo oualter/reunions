@@ -33,11 +33,14 @@ const Modal = (props) => {
   } else {
     finalDisplayDate = displayDate
   }
-
   const mfText = modalAttr
     .getNamedItem('datatext')
     .value.replaceAll(`\n`, `<br/>`)
-
+  // console.log(
+  //   "modalAttr.getNamedItem('datatext').value => ",
+  //   modalAttr.getNamedItem('datatext').value
+  // )
+  // console.log('mfText => ', mfText)
   return (
     <>
       <Transition appear show={isOpen} as={Fragment} className="z-1000">
@@ -65,9 +68,7 @@ const Modal = (props) => {
                 leaveFrom="opacity-100 scale-125"
                 leaveTo="opacity-0 scale-[0]"
               >
-                <div
-                  className="dialog-panel-wrapper rounded-2xl py-4"
-                >
+                <div className="dialog-panel-wrapper rounded-2xl py-4">
                   <Dialog.Panel className="dialog-reunion w-full max-w-md font-typewriter transform py-4 px-8  text-left align-middle transition-all">
                     <Dialog.Title
                       as="h3"
@@ -76,7 +77,7 @@ const Modal = (props) => {
                       {finalDisplayDate} <br /> {mfHour}
                     </Dialog.Title>
                     <div className="mt-2 pb-4 text-lg">
-                      <p dangerouslySetInnerHTML={{ __html: mfText }} />
+                      <div dangerouslySetInnerHTML={{ __html: mfText }} />
                     </div>
                   </Dialog.Panel>
                 </div>

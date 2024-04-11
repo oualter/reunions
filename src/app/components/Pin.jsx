@@ -4,10 +4,15 @@ import microfictionsContext from '../contexts/microfictions.context'
 
 
 const Pin = (props) => {
-  const { coordX, coordY, Date, Heure, Texte_microfiction, GingkoBiloba } =
-    props
+  const {
+    coordX,
+    coordY,
+    Date,
+    Heure,
+    Texte_mf,
+    GingkoBiloba,
+  } = props
   const { openModal } = useContext(microfictionsContext)
-
 
   return (
     <div
@@ -20,7 +25,8 @@ const Pin = (props) => {
       }}
       datadate={Date}
       datahour={Heure}
-      datatext={Texte_microfiction}
+      // datatext={Texte_microfiction}
+      datatext={Texte_mf}
       onClick={(e, value = { GingkoBiloba }) => {
         openModal(e, value)
       }}
